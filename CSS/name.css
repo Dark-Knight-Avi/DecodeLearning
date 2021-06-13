@@ -1,0 +1,91 @@
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.name input {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 4px solid white;
+    color: white;
+    text-align: center;
+    width: 70%;
+    margin-top: 75px;
+    margin-bottom: 30px;
+}
+
+.name p {
+    font-size: 1.3rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper .static-txt {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: #f1f1f1;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(1) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(78, 74, 74, 0.61);
+    border-left: 2px solid #f1f1f1;
+    opacity: 1;
+    z-index: +1;
+    animation: typing 2s steps(10) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100% {
+        left: 0;
+    }
+}
